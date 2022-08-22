@@ -1,0 +1,51 @@
+.reach-out {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 7em 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reach-out .form-container {
+  margin-bottom: 2em;
+}
+
+.reach-out .form-container > h3 {
+  font-size: 2rem;
+}
+
+.reach-out .form-container > p {
+  margin-bottom: 2em;
+}
+
+.reach-out .form-container > h3,
+.reach-out .form-container > p {
+  text-transform: capitalize;
+}
+
+.reach-out .img-container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .reach-out .form-container > h3 {
+    font-size: 3rem;
+  }
+
+  .reach-out .form-container > p {
+    font-size: 1.2rem;
+  }
+
+  .reach-out .img-container img {
+    height: 500px;
+  }
+
+  .reach-out .img-container,
+  .reach-out .form-container {
+    width: calc(50% - 2em);
+  }
+}
