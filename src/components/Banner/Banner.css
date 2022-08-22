@@ -15,6 +15,7 @@
   .banner-container .banner p {
     color: #fff;
     text-transform: capitalize;
+    text-align: center;
   }
   
   .banner-container .banner h2 {
