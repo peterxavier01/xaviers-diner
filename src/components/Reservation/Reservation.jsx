@@ -34,9 +34,11 @@ const Reservation = () => {
           <div className="form-input-container">
             <div className="mb-3">
               <input
-                type="date"
+                type="text"
+                placeholder="mm/dd/yyyy"
                 className="form-control"
-                placeholder="Date of reservation"
+                onFocus={(e) => (e.target.type = "date")}
+                onBlur={(e) => (e.target.type = "text")}
               />
             </div>
             <div>
