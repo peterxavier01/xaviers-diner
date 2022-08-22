@@ -33,13 +33,15 @@ const Reservation = () => {
           </div>
           <div className="form-input-container">
             <div className="mb-3">
-              <input type="date" className="form-control" />
+              <input
+                type="date"
+                className="form-control"
+                placeholder="Date of reservation"
+              />
             </div>
             <div>
               <select className="form-select" aria-label="time of day">
-                <option value="breakfast">
-                  BreakFast
-                </option>
+                <option value="breakfast">BreakFast</option>
                 <option value="lunch">Lunch</option>
                 <option value="dinner">Dinner</option>
               </select>
