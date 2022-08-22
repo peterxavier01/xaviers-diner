@@ -1,5 +1,4 @@
 .header .container {
-  margin-top: 1em;
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(../../assets/rest14.jpg);
@@ -63,6 +62,20 @@
   color: var(--tertiary-color);
   border: 2px solid var(--tertiary-color);
   transition: 0.3s ease-in;
+}
+
+@media screen and (max-width: 320px) {
+  .header-content {
+    min-height: 110vh;
+  }
+
+  .col-left h1 {
+    font-size: 2rem;
+  }
+
+  .col-left p {
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (min-width: 768px) {

@@ -1,10 +1,28 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
+
+import { motion } from "framer-motion";
+import { AiOutlineMenu, AiOutlineCloseCircle } from "react-icons/ai";
+
 import "./Navbar.css";
 import Logo from "../../assets/logo-light.png";
 
-import { NavLink } from "react-router-dom";
+const navbarVariants = {
+  hidden: {
+    y: "-10px",
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.2,
+      duration: 0.2,
+    },
+  },
+};
 
-const Navigation = () => {
+const Navbar = () => {
   const links = [
     { path: "/", title: "Home" },
     { path: "/about", title: "About" },
@@ -12,32 +30,69 @@ const Navigation = () => {
     { path: "/contact", title: "Contact" },
   ];
 
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const closeNav = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <Navbar fixed="top" collapseOnSelect expand="lg" className="navbar">
-      <Container className="navContainer">
-        <Navbar.Brand href="/" className="text-white logo-container">
+    <nav className="nav-bar">
+      <div className="nav-container container">
+        <a href="/" className="text-white logo-container">
           <img src={Logo} alt="logo" className="logo" />
-          <p className="logo-text text-white">Xavier's Diner</p>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto"></Nav>
-          <Nav>
+          <span className="logo-text text-white">Xavier's Diner</span>
+        </a>
+        {isOpen ? (
+          <AiOutlineCloseCircle
+            className="menu text-white fs-1"
+            onClick={handleClick}
+          />
+        ) : (
+          <AiOutlineMenu
+            className="menu text-white fs-3"
+            onClick={handleClick}
+          />
+        )}
+        <div className="menu-items-container">
+          {links.map((link, index) => (
+            <NavLink
+              key={index}
+              to={link.path}
+              style={{ color: "var(--white)" }}
+              className={({ isActive }) => (isActive ? "navbar-active" : "")}
+            >
+              {link.title}
+            </NavLink>
+          ))}
+        </div>
+      </div>
+      <div className="responsive-navbar">
+        {isOpen && (
+          <motion.div
+            variants={navbarVariants}
+            initial="hidden"
+            animate="visible"
+          >
             {links.map((link, index) => (
               <NavLink
                 key={index}
                 to={link.path}
                 style={{ color: "var(--white)" }}
                 className={({ isActive }) => (isActive ? "navbar-active" : "")}
+                onClick={closeNav}
               >
                 {link.title}
               </NavLink>
             ))}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+          </motion.div>
+        )}
+      </div>
+    </nav>
   );
 };
 
-export default Navigation;
+export default Navbar;
