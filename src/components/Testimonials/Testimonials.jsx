@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import "./Testimonials.css";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
-import { Navigation, A11y, Autoplay } from "swiper";
+import SwiperCore, { Navigation, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -16,6 +17,11 @@ import TestimonialFour from "../../assets/customer4.jpg";
 import TestimonialFive from "../../assets/customer5.jpg";
 
 const Testimonials = () => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  SwiperCore.use([Navigation]);
+
   const testimonials = [
     {
       src: TestimonialOne,
@@ -57,7 +63,7 @@ const Testimonials = () => {
           <p>Here's what our valued customers have to say about us</p>
         </div>
 
-        <div>
+        <div className="swiper-container">
           <Swiper
             navigation={true}
             modules={[Navigation, A11y, Autoplay]}
@@ -67,6 +73,12 @@ const Testimonials = () => {
             autoplay={{
               delay: 2500,
               disableOnInteraction: false,
+            }}
+            onInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
             }}
             breakpoints={{
               640: {
@@ -101,6 +113,23 @@ const Testimonials = () => {
                   </div>
                 </SwiperSlide>
               ))}
+            </div>
+
+            <div className="arrow-container">
+              <div
+                ref={prevRef}
+                style={{ left: "0px" }}
+                className="slide-arrow prev"
+              >
+                <MdKeyboardArrowLeft className="slide-icons" />
+              </div>
+              <div
+                ref={nextRef}
+                style={{ right: "0px" }}
+                className="slide-arrow next"
+              >
+                <MdKeyboardArrowRight className="slide-icons" />
+              </div>
             </div>
           </Swiper>
         </div>

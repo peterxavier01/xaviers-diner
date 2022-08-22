@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import Button from "../Button/Button";
-import { Navigation, A11y } from "swiper";
+import SwiperCore, { Navigation, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "./Meals.css";
+
 import "swiper/css";
 import "swiper/css/navigation";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 import MealOne from "../../assets/rest.jpg";
 import MealTwo from "../../assets/rest2.jpg";
@@ -16,6 +18,11 @@ import MealFive from "../../assets/rest6.jpg";
 import MealSix from "../../assets/rest7.jpg";
 
 const Meals = () => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  SwiperCore.use([Navigation]);
+
   const meals = [
     {
       src: MealOne,
@@ -64,7 +71,7 @@ const Meals = () => {
             <Button
               text="Full Menu"
               width={250}
-              height={74}
+              height={64}
               backgroundColor={`var(--tertiary-color)`}
               link="/products"
             />
@@ -74,9 +81,20 @@ const Meals = () => {
         <div className="meals-slider-container">
           <Swiper
             navigation={true}
-            modules={[Navigation, A11y]}
+            loop={true}
+            modules={[Navigation, A11y, Autoplay]}
             spaceBetween={50}
             slidesPerView={1}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            onInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }}
             breakpoints={{
               640: {
                 slidesPerView: 2,
@@ -103,6 +121,23 @@ const Meals = () => {
                   </div>
                 </SwiperSlide>
               ))}
+            </div>
+
+            <div className="arrow-container">
+              <div
+                ref={prevRef}
+                style={{ left: "0px" }}
+                className="slide-arrow prev"
+              >
+                <MdKeyboardArrowLeft className="slide-icons" />
+              </div>
+              <div
+                ref={nextRef}
+                style={{ right: "0px" }}
+                className="slide-arrow next"
+              >
+                <MdKeyboardArrowRight className="slide-icons" />
+              </div>
             </div>
           </Swiper>
         </div>
