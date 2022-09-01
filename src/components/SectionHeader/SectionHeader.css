@@ -1,0 +1,23 @@
+.section-header {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.section-sub-header {
+  font-size: 1rem;
+}
+
+.section-header,
+.section-sub-header {
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 768px) {
+  .section-header {
+    font-size: 3rem;
+  }
+
+  .section-sub-header {
+    font-size: 1.2rem;
+  }
+}

@@ -10,7 +10,7 @@ const Header = () => {
             <div className="header-content">
               <h1>We serve mouth-watering meals</h1>
               <p>
-                We pride ourselves in serving our customers the most healthy and
+                We pride ourselves on serving our customers the most healthy and
                 tasty dishes in the world.
               </p>
               <Link to="/products">Check out our menu</Link>

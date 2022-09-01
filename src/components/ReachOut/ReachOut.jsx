@@ -1,14 +1,14 @@
 import React from "react";
 
 import "./ReachOut.css";
-import Contact from "../../assets/customer5.jpg";
+import Contact from "../../assets/rest18.jpg";
 import Button from "../Button/Button";
 
 const ReachOut = () => {
   return (
     <div className="reach-out row">
       <div className="form-container col-md-6 col-sm-12">
-        <h3>Reach Out to us</h3>
+        <h3>Contact us</h3>
         <p>
           Feel free to tell us anything you would like us to know. We are always
           happy to hear from you

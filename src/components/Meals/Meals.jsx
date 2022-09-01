@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 
 import Button from "../Button/Button";
+import Card from "../Card/Card";
+
 import SwiperCore, { Navigation, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -113,12 +115,12 @@ const Meals = () => {
             <div className="meals-slider">
               {meals.map((meal, index) => (
                 <SwiperSlide key={index}>
-                  <div className="meals-card">
-                    <img src={meal.src} alt="tuna tartar" />
-                    <h3>{meal.title}</h3>
-                    <p>{meal.body}</p>
-                    <button>Make an Order</button>
-                  </div>
+                  <Card
+                    src={meal.src}
+                    title={meal.title}
+                    subtitle={meal.body}
+                    amount="$25"
+                  />
                 </SwiperSlide>
               ))}
             </div>

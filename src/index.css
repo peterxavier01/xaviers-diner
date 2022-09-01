@@ -29,5 +29,7 @@ body {
   --tertiary-color: #248232;
   --white: #fff;
   --dark-gray: #2d3a3a;
+  --medium-gray: #555;
   --light-gray: hsl(0, 0%, 83%);
+  --lighter-gray: hsl(0, 0%, 98%);
 }

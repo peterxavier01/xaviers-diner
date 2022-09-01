@@ -2,56 +2,142 @@
   width: 100%;
 }
 
-.cards {
+.about .cards {
   display: grid;
-  width: 70%;
 }
 
-.cardBox {
+.about img {
+  width: 100%;
+}
+
+.about .cards-container {
+  background-color: var(--dark-gray);
+  padding-block: 3em;
+}
+
+.about .cardBox {
   border: 1px solid var(--tertiary-color);
   border-radius: 10px;
   padding: 1em;
   margin-bottom: 1.4em;
 }
 
-.cardBox:first-of-type {
+.about .cardBox:first-of-type {
   margin-top: 4em;
 }
 
-.cardBox img {
+.about .cardBox img {
   width: 50px;
 }
 
-.cardBox .title {
+.about .cardBox p {
+  color: var(--white);
+}
+
+.about .cardBox .title {
   font-size: 1.2rem;
   margin-top: 0.5em;
   font-weight: 700;
 }
 
 .about .heading {
-  text-align: center;
-  margin-top: 1em;
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.about .about-heading-container {
+  margin-block: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.about .about-heading-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.chefs-container {
+  padding-block: 3em;
+}
+
+.about .chefs-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.about .chefs-grid img {
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 0.5em;
+}
+
+.about .chefs-grid h4 {
+  font-size: 1.3rem;
+}
+
+.about .chefs-grid p {
+  font-size: .9rem;
+}
+
+.chefs-header-container {
+  margin-bottom: 3em;
+  text-align: left;
 }
 
 @media screen and (min-width: 768px) {
-  .cards {
+  .about .cards {
     grid-template-columns: 1fr 1fr;
   }
 
-  .cardBox:first-of-type {
+  .about .cardBox:first-of-type {
     margin-top: 3em;
   }
 
-  .cardBox {
+  .about .heading {
+    font-size: 3rem;
+  }
+
+  .about .cardBox {
     margin-bottom: 0em;
     padding: 1em;
     margin: 1em;
     margin-top: 3em;
   }
+
+  .about .about-heading-container h2 {
+    font-size: 3rem;
+  }
+
+  .about .about-heading-container p {
+    font-size: 1.1rem;
+  }
+
+  .about .about-heading-container {
+    margin-block: 5em;
+  }
+
+  .about .cards-container {
+    padding-block: 5em;
+  }
+
+  .about .chefs-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+  }
+
+  .about .chefs-grid img {
+    height: 500px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  .cards {
+  .about .cards {
     grid-template-columns: repeat(3, 1fr);
   }
 }
