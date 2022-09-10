@@ -12,7 +12,7 @@
 
 .about .cards-container {
   background-color: var(--dark-gray);
-  padding-block: 3em;
+  padding-block: 4em;
 }
 
 .about .cardBox {
@@ -48,7 +48,7 @@
 }
 
 .about .about-heading-container {
-  margin-block: 3em;
+  margin-block: 4em;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -61,13 +61,18 @@
   margin-bottom: 0.5em;
 }
 
-.chefs-container {
-  padding-block: 3em;
+.about .about-heading-container p {
+  line-height: 30px;
+}
+
+.about .chefs-container {
+  padding-block: 4em;
 }
 
 .about .chefs-grid-container {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 2em;
 }
 
 .about .chefs-grid img {
@@ -79,13 +84,14 @@
 
 .about .chefs-grid h4 {
   font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .about .chefs-grid p {
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
-.chefs-header-container {
+.about .chefs-header-container {
   margin-bottom: 3em;
   text-align: left;
 }
@@ -116,19 +122,23 @@
 
   .about .about-heading-container p {
     font-size: 1.1rem;
+    line-height: 32px;
   }
 
   .about .about-heading-container {
-    margin-block: 5em;
+    margin-block: 7em;
   }
 
   .about .cards-container {
-    padding-block: 5em;
+    padding-block: 7em;
+  }
+
+  .about .chefs-container {
+    padding-block: 7em;
   }
 
   .about .chefs-grid-container {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2em;
   }
 
   .about .chefs-grid img {

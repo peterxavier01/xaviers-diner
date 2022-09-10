@@ -1,16 +1,32 @@
 import React from "react";
 
+import { fadeInLeftVariants, fadeInRightVariants } from "../../data";
+
 import "./Reservation.css";
 import Contact from "../../assets/rest5.jpg";
 import Button from "../Button/Button";
 
+import { motion } from "framer-motion";
+
 const Reservation = () => {
   return (
     <section className="reservation row">
-      <div className="reservation-img-container col-md-5 col-lg-7 col-sm-12">
-        <img src={Contact} alt="" />
-      </div>
-      <div className="reservation-form-container col-md-5 col-lg-5 col-sm-12">
+      <motion.div
+        variants={fadeInRightVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="reservation-img-container col-md-5 col-lg-7 col-sm-12"
+      >
+        <img src={Contact} alt="female waiter smiling in front of restaurant" />
+      </motion.div>
+      <motion.div
+        variants={fadeInLeftVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="reservation-form-container col-md-5 col-lg-5 col-sm-12"
+      >
         <form className="reservation-form">
           <h4>Make a reservation</h4>
           <p>
@@ -62,7 +78,7 @@ const Reservation = () => {
             backgroundColor="var(--tertiary-color)"
           />
         </form>
-      </div>
+      </motion.div>
     </section>
   );
 };

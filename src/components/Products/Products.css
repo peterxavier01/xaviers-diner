@@ -1,5 +1,5 @@
 .menu-tab-container {
-  padding-block: 3em;
+  padding-block: 4em;
 }
 
 .products .tab-content {
@@ -38,7 +38,7 @@
 
 @media screen and (min-width: 768px) {
   .menu-tab-container {
-    padding-block: 5em;
+    padding-block: 7em;
   }
 
   .products .nav-item {

@@ -1,7 +1,7 @@
 .testimonials {
   background-color: var(--dark-gray);
   color: var(--white);
-  padding: 7em 1em;
+  padding: 4em 1em;
 }
 
 .testimonials-wrapper {
@@ -125,6 +125,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .testimonials {
+    padding: 7em 1em;
+  }
+
   .testimonials-wrapper > div:first-child h3 {
     font-size: 3rem;
     margin-bottom: 0.2em;

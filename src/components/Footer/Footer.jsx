@@ -9,7 +9,11 @@ import {
   AiOutlineWhatsApp,
   AiOutlineTwitter,
   AiOutlineFacebook,
+  AiOutlinePhone,
+  AiOutlineMail,
 } from "react-icons/ai";
+
+import { MdOutlineLocationOn } from "react-icons/md";
 
 const Footer = () => {
   return (
@@ -55,14 +59,23 @@ const Footer = () => {
 
         <div className="footer-contact">
           <h3>Contact Us</h3>
-          <p>1A, Landsview Avenue, Nigeria</p>
-          <p>+234 9067 2722 8280</p>
-          <p>xaviersdiner@gmail.com</p>
+          <div className="icon-container">
+            <MdOutlineLocationOn className="footer-contact-icon" />
+            <span>1A, Landsview Avenue, Nigeria</span>
+          </div>
+          <div className="icon-container">
+            <AiOutlinePhone className="footer-contact-icon" />
+            <span>+234 9067 2722 8280</span>
+          </div>
+          <div className="icon-container">
+            <AiOutlineMail className="footer-contact-icon" />
+            <span>xaviersdiner@gmail.com</span>
+          </div>
         </div>
       </div>
 
       <div className="copyright">
-        Copyright ©2022 All rights reserved | Made by Peter Uadiale
+        Copyright © 2022 All rights reserved | Peter Uadiale
       </div>
     </div>
   );

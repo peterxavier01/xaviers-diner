@@ -35,7 +35,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
       <Banner
         heading="Reach out to us"
         subHeading="How Can We Serve You Better"
@@ -46,7 +46,7 @@ const Contact = () => {
       </div>
 
       <div className="map-group-container">
-        <div className="container mb-4 contact-header-container">
+        <div className="container contact-header-container">
           <SectionHeader
             header="Locate Us"
             subHeader="Make your way to a destination you will never forget"

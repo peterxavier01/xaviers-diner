@@ -1,35 +1,14 @@
-import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import { motion } from "framer-motion";
 import { AiOutlineMenu, AiOutlineCloseCircle } from "react-icons/ai";
+import { navbarVariants, links } from "../../data";
 
 import "./Navbar.css";
 import Logo from "../../assets/logo-light.png";
 
-const navbarVariants = {
-  hidden: {
-    y: "-10px",
-    opacity: 0,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      delay: 0.2,
-      duration: 0.2,
-    },
-  },
-};
-
 const Navbar = () => {
-  const links = [
-    { path: "/", title: "Home" },
-    { path: "/about", title: "About" },
-    { path: "/products", title: "Menu" },
-    { path: "/contact", title: "Contact" },
-  ];
-
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen((prev) => !prev);
@@ -40,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="nav-bar">
+    <nav className="nav-bar" id="nav-bar">
       <div className="nav-container container">
         <a href="/" className="text-white logo-container">
           <img src={Logo} alt="logo" className="logo" />

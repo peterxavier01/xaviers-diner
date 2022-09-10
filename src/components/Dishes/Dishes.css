@@ -3,7 +3,14 @@
   flex-direction: column;
   align-items: center;
   padding: 1em;
-  padding-block: 7em;
+  padding-block: 4em;
+}
+
+.dishes .dishes-header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .dishes h2 {
@@ -60,6 +67,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .dishes {
+    padding-block: 7em;
+  }
+
   .dishes-grid {
     grid-template-columns: repeat(2, 1fr);
   }

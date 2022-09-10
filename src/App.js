@@ -9,7 +9,7 @@ import Layout from "./components/Layout";
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App" id="app">
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -1,5 +1,13 @@
 import React, { useRef } from "react";
 
+import { motion } from "framer-motion";
+import {
+  meals,
+  fadeInLeftVariants,
+  fadeInRightVariants,
+  fadeInUpVariants,
+} from "../../data";
+
 import Button from "../Button/Button";
 import Card from "../Card/Card";
 
@@ -12,64 +20,35 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
-import MealOne from "../../assets/rest.jpg";
-import MealTwo from "../../assets/rest2.jpg";
-import MealThree from "../../assets/rest3.jpg";
-import MealFour from "../../assets/rest4.jpg";
-import MealFive from "../../assets/rest6.jpg";
-import MealSix from "../../assets/rest7.jpg";
-
 const Meals = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
   SwiperCore.use([Navigation]);
 
-  const meals = [
-    {
-      src: MealOne,
-      title: "Tuna Tartare",
-      body: "The most exquisite taste in all the world",
-    },
-    {
-      src: MealTwo,
-      title: "Prawn Sauce",
-      body: "The most exquisite taste in all the world",
-    },
-    {
-      src: MealThree,
-      title: "Shrimp Sauce",
-      body: "The most exquisite taste in all the world",
-    },
-    {
-      src: MealFour,
-      title: "Cheese Burger",
-      body: "The most exquisite taste in all the world",
-    },
-    {
-      src: MealFive,
-      title: "Pizza al Padellino",
-      body: "The most exquisite taste in all the world",
-    },
-    {
-      src: MealSix,
-      title: "Chicken Wings",
-      body: "The most exquisite taste in all the world",
-    },
-  ];
-
   return (
     <section className="meals">
       <div className="meals-wrapper">
         <div className="meals-menu">
-          <div className="meals-header">
+          <motion.div
+            variants={fadeInRightVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="meals-header"
+          >
             <h3>Our Featured Food Menus</h3>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
               incidunt cumque quos est enim aut.
             </p>
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            variants={fadeInLeftVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <Button
               text="Full Menu"
               width={250}
@@ -77,10 +56,16 @@ const Meals = () => {
               backgroundColor={`var(--tertiary-color)`}
               link="/products"
             />
-          </div>
+          </motion.div>
         </div>
 
-        <div className="meals-slider-container">
+        <motion.div
+          variants={fadeInUpVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="meals-slider-container"
+        >
           <Swiper
             navigation={true}
             loop={true}
@@ -142,7 +127,7 @@ const Meals = () => {
               </div>
             </div>
           </Swiper>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
