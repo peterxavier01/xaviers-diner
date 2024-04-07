@@ -280,9 +280,11 @@ export const navbarVariants = {
 export const headerVariants = {
   hidden: {
     scale: 0.7,
+    opacity: 0,
   },
   visible: {
     scale: 1,
+    opacity: 1,
     transition: {
       delay: 0.5,
       duration: 0.5,
